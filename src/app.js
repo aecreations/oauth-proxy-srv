@@ -172,7 +172,7 @@ async function getAccessToken(aAppName, aRequest, aResponse)
 
   if (backnd == "onedrive") {
     requestParams.delete("client_secret");  // Not required for native apps
-    requestParams.set("scope", "Files.ReadWrite offline_access");
+    requestParams.set("scope", "User.Read Files.ReadWrite.AppFolder offline_access");
   }
 
   requestOpts.body = requestParams;
