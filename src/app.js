@@ -269,7 +269,7 @@ async function getAccessToken(aAppName, aRequest, aResponse)
 
 function isValidService(aAuthzSrvKey)
 {
-  let rv = ["dropbox", "onedrive"].includes(aAuthzSrvKey);
+  let rv = ["dropbox", "onedrive", "googledrive"].includes(aAuthzSrvKey);
 
   return rv;
 }
