@@ -216,6 +216,13 @@ async function getAccessToken(aAppName, aRequest, aResponse)
         outResp.refresh_token = respBody["refresh_token"];
       }
     }
+
+    // Google Drive: Also include the scopes returned from the access token
+    // request in order to confirm that all the necessary permissions were
+    // granted by the user.
+    if (backnd == "googledrive") {
+      outResp.scope = respBody.scope;
+    }
     
     aResponse.json(outResp);
   }
